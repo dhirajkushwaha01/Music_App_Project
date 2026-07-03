@@ -1,0 +1,104 @@
+{
+    "courses": [
+        {
+            "id": 1,
+            "title": "Guitar Fundamentals",
+            "slug": "guitar-fundamentals",
+            "description": "Learn the basics of playing guitar with our comprehensive beginner's course.",
+            "price": 99.99,
+            "instructor": "John Doe",
+            "isFeatured": true,
+            "image": "/courses/guitar.jpg"
+        },
+        {
+            "id": 2,
+            "title": "Piano for Beginners",
+            "slug": "piano-for-beginners",
+            "description": "Start your musical journey with foundational piano skills taught by expert instructors.",
+            "price": 89.99,
+            "instructor": "Jane Smith",
+            "isFeatured": true,
+            "image": "/courses/piano.jpg"
+        },
+        {
+            "id": 3,
+            "title": "Advanced Vocal Techniques",
+            "slug": "advanced-vocal-techniques",
+            "description": "Enhance your singing abilities with professional vocal training.",
+            "price": 119.99,
+            "instructor": "Sarah Johnson",
+            "isFeatured": false,
+            "image": "/courses/vocal.jpg"
+        },
+        {
+            "id": 4,
+            "title": "Music Production Masterclass",
+            "slug": "music-production-masterclass",
+            "description": "Learn recording, mixing, and mastering using modern DAWs.",
+            "price": 149.99,
+            "instructor": "Mike Wilson",
+            "isFeatured": true,
+            "image": "/courses/production.jpg"
+        },
+        {
+            "id": 5,
+            "title": "Drum Essentials",
+            "slug": "drum-essentials",
+            "description": "Master the fundamentals of drumming and rhythm.",
+            "price": 79.99,
+            "instructor": "David Brown",
+            "isFeatured": false,
+            "image": "/courses/drums.jpg"
+        },
+        {
+            "id": 6,
+            "title": "Violin for Beginners",
+            "slug": "violin-for-beginners",
+            "description": "Start your violin journey with expert guidance. Grow up",
+            "price": 109.99,
+            "instructor": "Emma Davis",
+            "isFeatured": true,
+            "image": "/courses/violin.jpg"
+        },
+        {
+            "id": 7,
+            "title": "Electronic Music Production",
+            "slug": "electronic-music-production",
+            "description": "Create electronic music tracks using synthesizers, drum machines, and digital tools.",
+            "price": 129.99,
+            "instructor": "Chris Martin",
+            "isFeatured": false,
+            "image": "/courses/electronic.jpg"
+        },
+        {
+            "id": 8,
+            "title": "Bass Guitar Essentials",
+            "slug": "bass-guitar-essentials",
+            "description": "Learn bass techniques, grooves, and rhythm patterns for modern music styles.",
+            "price": 94.99,
+            "instructor": "Robert Taylor",
+            "isFeatured": true,
+            "image": "/courses/bass.jpg"
+        },
+        {
+            "id": 9,
+            "title": "Jazz Improvisation",
+            "slug": "jazz-improvisation",
+            "description": "Develop improvisation skills and master jazz scales and chord progressions.",
+            "price": 139.99,
+            "instructor": "Michael Anderson",
+            "isFeatured": false,
+            "image": "/courses/jazz.jpg"
+        },
+        {
+            "id": 10,
+            "title": "Digital DJ Academy",
+            "slug": "digital-dj-academy",
+            "description": "Master DJ equipment, mixing techniques, and live performance skills.",
+            "price": 124.99,
+            "instructor": "Sophia Miller",
+            "isFeatured": true,
+            "image": "/courses/dj.jpg"
+        }
+    ]
+}
