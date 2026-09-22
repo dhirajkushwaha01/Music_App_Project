@@ -55,17 +55,17 @@ function Upcomingwebinars() {
     return (
 
 
-        <div className="p-12 Dbg-gray-900">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6">
+        <div className="p-6 sm:p-8 md:p-12 bg-gray-900">
+            <div className="max-w-7xl mx-auto px-2 sm:px-4 md:px-6">
                 <div className="text-center">
 
                     <h2
-                        className="inline-block text-base font-semibold text-teal-600 uppercase border border-cyan-700 p-3 m-4 rounded-lg">
+                        className="inline-block text-sm sm:text-base font-semibold text-teal-600 uppercase border border-cyan-700 p-2 sm:p-3 m-4 rounded-lg">
 
                         FEATURED WEBINARS</h2>
 
                     <p
-                        className="mt-2 text-3xl font-extrabold tracking-tight text-white sm:text-4xl"
+                        className="mt-2 text-2xl sm:text-3xl font-extrabold tracking-tight text-white md:text-4xl"
 
                     >Enhance Your Musical Journey</p>
 
@@ -73,7 +73,7 @@ function Upcomingwebinars() {
 
 
 
-                <div className="mt-10">
+                <div className="mt-8 sm:mt-10">
 
 
                     <HoverEffect
@@ -82,13 +82,14 @@ function Upcomingwebinars() {
                             description: webinar.description,
                             link: "/",
                         }))}
+                        className="grid-cols-2 md:grid-cols-2 lg:grid-cols-3"
                     />
 
                 </div>
 
 
 
-                <div className="mt-10 text-center">
+                <div className="mt-8 sm:mt-10 text-center">
 
                     <Link href="/" className="px-6 py-3 rounded-full bg-gradient-to-r from-teal-500 to-cyan-500 text-white font-semibold shadow-lg hover:scale-105 hover:shadow-cyan-500/50 transition-all duration-300">
                         View All webinars

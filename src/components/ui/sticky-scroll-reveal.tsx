@@ -64,13 +64,13 @@ export const StickyScroll = ({
             animate={{
                 backgroundColor: backgroundColors[activeCard % backgroundColors.length],
             }}
-            className="relative flex h-[30rem] justify-center space-x-103 overflow-y-auto rounded-md p-10"
+            className="relative flex h-[30rem] justify-center gap-6 sm:gap-10 md:gap-20 lg:space-x-103 overflow-y-auto rounded-md p-4 sm:p-6 md:p-10 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
             ref={ref}
         >
-            <div className="div relative flex items-start px-4">
-                <div className="max-w-2xl">
+            <div className="div relative flex items-start px-2 sm:px-4">
+                <div className="max-w-full sm:max-w-xl md:max-w-2xl">
                     {content.map((item, index) => (
-                        <div key={item.title + index} className="my-20">
+                        <div key={item.title + index} className="my-10 sm:my-16 md:my-20">
                             <motion.h2
                                 initial={{
                                     opacity: 0,
@@ -78,7 +78,7 @@ export const StickyScroll = ({
                                 animate={{
                                     opacity: activeCard === index ? 1 : 0.3,
                                 }}
-                                className="text-2xl font-bold text-slate-100"
+                                className="text-xl sm:text-2xl font-bold text-slate-100"
                             >
                                 {item.title}
                             </motion.h2>
@@ -89,7 +89,7 @@ export const StickyScroll = ({
                                 animate={{
                                     opacity: activeCard === index ? 1 : 0.3,
                                 }}
-                                className="text-kg mt-10 max-w-sm text-slate-300"
+                                className="text-kg mt-6 sm:mt-10 max-w-sm text-slate-300"
                             >
                                 {item.description}
                             </motion.p>

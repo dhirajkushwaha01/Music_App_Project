@@ -40,8 +40,8 @@ function MusicSchoolTestimonials() {
     return (
 
 
-        <div className="h-[40rem] w-full dark:bg-black dark:bg-grid-white/[0.2] relative flex flex-col items-center justify-center overflow-hidden">
-            <h2 className="text-3xl font-bold text-center mb-8 z-10">
+        <div className="min-h-[28rem] sm:min-h-[34rem] md:h-[40rem] w-full dark:bg-black dark:bg-grid-white/[0.2] relative flex flex-col items-center justify-center overflow-hidden py-12 md:py-0">
+            <h2 className="text-2xl sm:text-3xl font-bold text-center mb-6 sm:mb-8 z-10 px-4">
                 Hear our Harmony: Voices of Success
             </h2>
 
