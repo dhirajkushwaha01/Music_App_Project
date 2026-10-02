@@ -8,7 +8,7 @@
             "price": 99.99,
             "instructor": "John Doe",
             "isFeatured": true,
-            "image": "/courses/guitar.jpg"
+            "image": "https://images.unsplash.com/photo-1510915361894-db8b60106cb1?q=80&w=1000&auto=format&fit=crop"
         },
         {
             "id": 2,
@@ -18,7 +18,7 @@
             "price": 89.99,
             "instructor": "Jane Smith",
             "isFeatured": true,
-            "image": "/courses/piano.jpg"
+            "image": "https://images.unsplash.com/photo-1552422535-c45813c61732?q=80&w=1000&auto=format&fit=crop"
         },
         {
             "id": 3,
@@ -28,7 +28,7 @@
             "price": 119.99,
             "instructor": "Sarah Johnson",
             "isFeatured": false,
-            "image": "/courses/vocal.jpg"
+            "image": "https://images.unsplash.com/photo-1516280440614-37939bbacd81?q=80&w=1000&auto=format&fit=crop"
         },
         {
             "id": 4,
@@ -38,7 +38,7 @@
             "price": 149.99,
             "instructor": "Mike Wilson",
             "isFeatured": true,
-            "image": "/courses/production.jpg"
+            "image": "https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?q=80&w=1000&auto=format&fit=crop"
         },
         {
             "id": 5,
@@ -48,7 +48,7 @@
             "price": 79.99,
             "instructor": "David Brown",
             "isFeatured": false,
-            "image": "/courses/drums.jpg"
+            "image": "https://images.unsplash.com/photo-1519892300165-cb5542fb47c7?q=80&w=1000&auto=format&fit=crop"
         },
         {
             "id": 6,
@@ -58,7 +58,7 @@
             "price": 109.99,
             "instructor": "Emma Davis",
             "isFeatured": true,
-            "image": "/courses/violin.jpg"
+            "image": "https://images.unsplash.com/photo-1612225330812-01a9c6b355ec?q=80&w=1000&auto=format&fit=crop"
         },
         {
             "id": 7,
@@ -68,7 +68,7 @@
             "price": 129.99,
             "instructor": "Chris Martin",
             "isFeatured": false,
-            "image": "/courses/electronic.jpg"
+            "image": "https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?q=80&w=1000&auto=format&fit=crop"
         },
         {
             "id": 8,
@@ -78,7 +78,7 @@
             "price": 94.99,
             "instructor": "Robert Taylor",
             "isFeatured": true,
-            "image": "/courses/bass.jpg"
+            "image": "https://images.unsplash.com/photo-1550291652-6ea9114a47b1?q=80&w=1000&auto=format&fit=crop"
         },
         {
             "id": 9,
@@ -88,7 +88,7 @@
             "price": 139.99,
             "instructor": "Michael Anderson",
             "isFeatured": false,
-            "image": "/courses/jazz.jpg"
+            "image": "https://images.unsplash.com/photo-1525994886773-080587e161c2?q=80&w=1000&auto=format&fit=crop"
         },
         {
             "id": 10,
@@ -98,7 +98,7 @@
             "price": 124.99,
             "instructor": "Sophia Miller",
             "isFeatured": true,
-            "image": "/courses/dj.jpg"
+            "image": "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?q=80&w=1000&auto=format&fit=crop"
         }
     ]
 }

@@ -91,7 +91,7 @@ function Upcomingwebinars() {
 
                 <div className="mt-8 sm:mt-10 text-center">
 
-                    <Link href="/" className="px-6 py-3 rounded-full bg-gradient-to-r from-teal-500 to-cyan-500 text-white font-semibold shadow-lg hover:scale-105 hover:shadow-cyan-500/50 transition-all duration-300">
+                    <Link href="/" className="px-6 py-3 rounded-full bg-linear-to-r from-teal-500 to-cyan-500 text-white font-semibold shadow-lg hover:scale-105 hover:shadow-cyan-500/50 transition-all duration-300">
                         View All webinars
                     </Link>
 

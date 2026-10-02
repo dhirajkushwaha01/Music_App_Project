@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+@keyframes meteor {
+  0% { transform: rotate(215deg) translateX(0); opacity: 1; }
+  70% { opacity: 1; }
+  100% { transform: rotate(215deg) translateX(-1800px); opacity: 0; }
+}
+body { background: black; margin: 0; width: 1200px; height: 900px; overflow: hidden; position: relative; }
+.meteor-container { position: absolute; inset: 0; overflow: hidden; }
+.meteor {
+  position: absolute;
+  top: -40px;
+  left: 300px;
+  width: 3px;
+  height: 3px;
+  border-radius: 9999px;
+  background-color: white;
+  transform: rotate(215deg);
+  animation: meteor 5s linear infinite;
+  box-shadow: 0 0 0 1px #ffffff30;
+}
+.meteor::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 80px;
+  height: 2px;
+  background: linear-gradient(to right, white, transparent);
+}
+</style>
+</head>
+<body>
+  <div class="meteor-container">
+    <div class="meteor"></div>
+  </div>
+</body>
+</html>

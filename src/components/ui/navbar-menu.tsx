@@ -1,6 +1,8 @@
 "use client";
 import React from "react";
 import { motion } from "motion/react";
+import Link from "next/link";
+import { cn } from "@/utils/cn";
 
 const transition = {
     type: "spring" as const,
@@ -17,42 +19,64 @@ export const MenuItem = ({
     item,
     children,
 }: {
-    setActive: (item: string) => void;
+    setActive: (item: string | null) => void;
     active: string | null;
     item: string;
     children?: React.ReactNode;
 }) => {
+    const isCurrentActive = active === item;
+
+    const handleToggle = (e: React.MouseEvent) => {
+        if (children) {
+            e.stopPropagation();
+            setActive(isCurrentActive ? null : item);
+        }
+    };
+
     return (
-        <div onMouseEnter={() => setActive(item)} className="relative ">
-            <motion.p
+        <div
+            onMouseEnter={() => {
+                // Desktop hover support
+                if (typeof window !== "undefined" && window.innerWidth >= 768) {
+                    setActive(item);
+                }
+            }}
+            className="relative"
+        >
+            <motion.div
+                onClick={handleToggle}
                 transition={{ duration: 0.3 }}
-                className="cursor-pointer text-black hover:opacity-[0.9] dark:text-white"
+                className={cn(
+                    "cursor-pointer text-sm sm:text-base font-medium px-2 py-1 select-none flex items-center gap-1 transition-colors",
+                    isCurrentActive ? "text-teal-400" : "text-black dark:text-white hover:text-teal-300"
+                )}
             >
-                {item}
-            </motion.p>
-            {active !== null && (
-                <motion.div
-                    initial={{ opacity: 0, scale: 0.85, y: 10 }}
-                    animate={{ opacity: 1, scale: 1, y: 0 }}
-                    transition={transition}
-                >
-                    {active === item && children && (
-                        <div className="absolute top - [calc(100%_+_1.2rem)] left-1/2 transform -translate-x-1/2 pt-4">
-                            <motion.div
-                                transition={transition}
-                                layoutId="active" // layoutId ensures smooth animation
-                                className="bg-white dark:bg-black backdrop-blur-sm rounded-2xl overflow-hidden border border-black /[0.2] dark:border-white/[0.2] shadow-xl"
-                            >
-                                <motion.div
-                                    layout // layout ensures smooth animation
-                                    className="w-max h-full p-4"
-                                >
-                                    {children}
-                                </motion.div>
-                            </motion.div>
+                <span>{item}</span>
+                {children && (
+                    <span
+                        className={cn(
+                            "text-[10px] transition-transform duration-200 inline-block",
+                            isCurrentActive ? "rotate-180 text-teal-400" : "text-gray-400"
+                        )}
+                    >
+                        ▼
+                    </span>
+                )}
+            </motion.div>
+
+            {isCurrentActive && children && (
+                <div className="absolute top-[calc(100%+0.8rem)] left-1/2 transform -translate-x-1/2 pt-2 z-50">
+                    <motion.div
+                        transition={transition}
+                        initial={{ opacity: 0, scale: 0.9, y: 6 }}
+                        animate={{ opacity: 1, scale: 1, y: 0 }}
+                        className="bg-black/95 backdrop-blur-xl rounded-2xl overflow-hidden border border-white/20 shadow-[0_12px_40px_rgba(0,0,0,0.85)] min-w-[210px] max-w-[90vw]"
+                    >
+                        <div className="p-3 sm:p-4">
+                            {children}
                         </div>
-                    )}
-                </motion.div>
+                    </motion.div>
+                </div>
             )}
         </div>
     );
@@ -67,8 +91,12 @@ export const Menu = ({
 }) => {
     return (
         <nav
-            onMouseLeave={() => setActive(null)} // resets the state
-            className="relative rounded-full border border-transparent dark:bg-black dark:border-white/[0.2] bg-white shadow-input flex justify-center space-x-4 px-8 py-6 "
+            onMouseLeave={() => {
+                if (typeof window !== "undefined" && window.innerWidth >= 768) {
+                    setActive(null);
+                }
+            }}
+            className="relative rounded-full border border-white/15 bg-black/85 backdrop-blur-md shadow-2xl flex items-center justify-center space-x-2 sm:space-x-6 px-4 sm:px-8 py-2.5 sm:py-4 transition-all"
         >
             {children}
         </nav>
@@ -87,7 +115,7 @@ export const ProductItem = ({
     src: string;
 }) => {
     return (
-        <a href={href} className="flex space-x-2">
+        <Link href={href} className="flex space-x-2">
             <img
                 src={src}
                 width={140}
@@ -103,17 +131,22 @@ export const ProductItem = ({
                     {description}
                 </p>
             </div>
-        </a>
+        </Link>
     );
 };
 
-export const HoveredLink = ({ children, ...rest }: any) => {
+export const HoveredLink = ({ children, onClick, href, className, ...rest }: any) => {
     return (
-        <a
+        <Link
+            href={href}
+            onClick={onClick}
+            className={cn(
+                "text-neutral-300 hover:text-teal-400 transition-colors py-1.5 px-1 block text-sm font-medium rounded-lg hover:bg-white/[0.05]",
+                className
+            )}
             {...rest}
-            className="text-neutral-700 dark:text-neutral-200 hover:text-gray-400 "
         >
             {children}
-        </a>
+        </Link>
     );
 };

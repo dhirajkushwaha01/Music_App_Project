@@ -4,21 +4,33 @@ import Instructors from "@/components/Instructors";
 import MusicSchoolTestimonials from "@/components/TestmonialCards";
 import Upcomingwebinars from "@/components/Upcomingwebinars";
 import WhyChooseUs from "@/components/WhyChooseUs";
-import Footer from "@/components/Footer"; 
-import page from "@/app/courses/page";
+import { ScrollReveal } from "@/components/ui/scroll-reveal";
 
 export default function Home() {
   return (
-    <main className="min-h-screen lbg-black/ [0.96] antialiased bg-grid-white/[0.02]">
+    <main className="min-h-screen bg-black/96 antialiased bg-grid-white/2">
 
       <HeroSection />
-      <FeaturedCourses />
-      <WhyChooseUs />
-      <MusicSchoolTestimonials />
-      <Upcomingwebinars />
-      <Instructors />
-      <Footer /> 
-      
+
+        <FeaturedCourses />
+     
+        <WhyChooseUs />
+     
+
+      <ScrollReveal>
+        <MusicSchoolTestimonials />
+      </ScrollReveal>
+
+      <ScrollReveal>
+        <Upcomingwebinars />
+      </ScrollReveal>
+
+      <ScrollReveal>
+        <Instructors />
+      </ScrollReveal>
+
+
+
     </main>
 
   );

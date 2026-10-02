@@ -52,7 +52,7 @@ const instructors = [
 
 function Instructors() {
     return (
-        <div className="relative h-[45rem] overflow-hidden flex items-center justify-center">
+        <div className="relative h-180 overflow-hidden flex items-center justify-center">
 
             <WavyBackground className="w-full max-w-7xl mx-auto flex flex-col items-center justify-center h-full">
                 <h2 className="text-2xl md:text-4xl lg:text-7xl text-white font-bold text-center mb-8">

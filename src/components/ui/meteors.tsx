@@ -1,44 +1,53 @@
 "use client";
 import { cn } from "@/utils/cn";
-import { motion } from "motion/react";
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 export const Meteors = ({
-    number,
+    number = 40,
     className,
 }: {
     number?: number;
     className?: string;
 }) => {
-    const meteors = new Array(number || 20).fill(true);
-    return (
-        <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.5 }}
-        >
-            {meteors.map((el, idx) => {
-                const meteorCount = number || 20;
-                // Calculate position to evenly distribute meteors across container width
-               const position = idx * (window.innerWidth / meteorCount);// Spread across 800px range, centered
+    const [mounted, setMounted] = useState(false);
+    const [meteorList, setMeteorList] = useState<
+        { top: string; left: string; delay: string; duration: string }[]
+    >([]);
 
-                return (
-                    <span
-                        key={"meteor" + idx}
-                        className={cn(
-                            "animate-meteor-effect absolute h-0.5 w-0.5 rotate-[45deg] rounded-[9999px] bg-slate-500 shadow-[0_0_0_1px_#ffffff10]",
-                            "before:absolute before:top-1/2 before:h-[1px] before:w-[50px] before:-translate-y-[50%] before:transform before:bg-gradient-to-r before:from-[#64748b] before:to-transparent before:content-['']",
-                            className,
-                        )}
-                        style={{
-                            top: "-40px", // Start above the container
-                            left: position + "px",
-                            animationDelay: Math.random() * 5 + "s", // Random delay between 0-5s
-                            animationDuration: Math.floor(Math.random() * (10 - 5) + 5) + "s", // Keep some randomness in duration
-                        }}
-                    ></span>
-                );
-            })}
-        </motion.div>
+    useEffect(() => {
+        setMounted(true);
+        const count = number || 40;
+        const list = Array.from({ length: count }).map((_, idx) => {
+            // All meteors start strictly above the screen from the top
+            const top = (Math.floor(Math.random() * -40) - 20) + "px";
+            // Spread horizontally so diagonal rain sweeps the entire page (-40% to 100%)
+            const left = ((idx * (140 / count)) - 40 + (Math.random() * 6 - 3)) + "%";
+            // Negative delay so rain is ALREADY continuously streaming everywhere upon page load
+            const delay = "-" + (Math.random() * 12).toFixed(2) + "s";
+            // Slower, calmer and smoother falling speed (8s to 12s)
+            const duration = (Math.floor(Math.random() * 5) + 8) + "s";
+
+            return { top, left, delay, duration };
+        });
+        setMeteorList(list);
+    }, [number]);
+
+    if (!mounted) return null;
+
+    return (
+        <div className="pointer-events-none absolute inset-0 overflow-hidden z-0 w-full h-full">
+            {meteorList.map((m, idx) => (
+                <span
+                    key={"meteor-" + idx}
+                    className={cn("meteor-star", className)}
+                    style={{
+                        top: m.top,
+                        left: m.left,
+                        animationDelay: m.delay,
+                        animationDuration: m.duration,
+                    }}
+                />
+            ))}
+        </div>
     );
 };
